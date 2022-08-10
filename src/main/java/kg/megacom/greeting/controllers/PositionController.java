@@ -2,10 +2,13 @@ package kg.megacom.greeting.controllers;
 
 import kg.megacom.greeting.controllers.base.GrudMethods;
 import kg.megacom.greeting.models.Position;
+import kg.megacom.greeting.services.PositionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
+
 import java.util.List;
+import java.util.Scanner;
 
 @RestController
 @RequestMapping("/position")
@@ -13,25 +16,31 @@ import java.util.List;
 
 public class PositionController implements GrudMethods<Position>{
 
+    @Autowired
+    private PositionService positionService;
 
     @Override
     public List<Position> findAll() {
-        return null;
+
+        return positionService.findAll();
     }
 
     @Override
     public Position getById(Long id) {
+
         return null;
     }
 
     @Override
     public Position save(Position position) {
-        return null;
+
+        return positionService.save(position);
     }
 
     @Override
     public Position update(Position position) {
-        return null;
+
+     return positionService.update(position);
     }
 
     @Override
